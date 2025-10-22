@@ -1,0 +1,33 @@
+# Core dependencies
+openai-whisper==20231117
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# Vector database and embeddings
+chromadb==0.4.22
+sentence-transformers==2.3.1
+
+# AI/LLM integration
+openai>=1.10.0
+anthropic>=0.18.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Audio/Video processing
+ffmpeg-python>=0.2.0
+pydub>=0.25.1
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+click>=8.1.0
+rich>=13.7.0
+
+# Data handling
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Optional: GPU acceleration
+# Install separately based on your CUDA version:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
