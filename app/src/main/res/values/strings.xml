@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Low Battery Indication</string>
+
+    <string name="status_needs_permission">To show the red low-battery bar over other apps, please grant the “Display over other apps” permission.</string>
+    <string name="status_active">Monitoring is active.\nA red bar will appear at the top of the screen when the battery drops below %1$d%% and disappear when charging or back above the limit.</string>
+
+    <string name="grant_permission">Grant overlay permission</string>
+    <string name="permission_granted">Permission granted ✓</string>
+
+    <string name="how_it_works">The red warning bar appears automatically below 10%% battery and goes away on its own once you plug in the charger or the level rises back above 10%%.</string>
+
+    <string name="low_battery_bar_text">⚠ LOW BATTERY — %1$d%% — PLEASE CHARGE</string>
+
+    <string name="notification_channel_name">Battery monitoring</string>
+    <string name="notification_channel_description">Keeps the low-battery bar service running in the background</string>
+    <string name="notification_title">Low Battery Indication</string>
+    <string name="notification_text">Watching battery level (red bar below %1$d%%)</string>
+</resources>

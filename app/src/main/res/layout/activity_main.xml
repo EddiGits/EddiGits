@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_battery_alert"
+        android:contentDescription="@string/app_name"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:text="@string/status_needs_permission" />
+
+    <Button
+        android:id="@+id/permission_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grant_permission" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:alpha="0.7"
+        android:text="@string/how_it_works" />
+
+</LinearLayout>
