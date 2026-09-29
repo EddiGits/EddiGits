@@ -71,3 +71,6 @@ htmlcov/
 *.tmp
 *.bak
 *.temp
+
+# Google Apps Script credentials
+.clasprc.json
