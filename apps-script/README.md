@@ -50,3 +50,27 @@ https://github.com/google/clasp/blob/master/docs/run.md.
 
 Scripts that touch Gmail, Drive, or Sheets need a one-time authorization
 click in the Apps Script editor the first time they run.
+
+## Inbox advertisement classifier (`src/AdClassifier.js`)
+
+Sends each inbox thread to [Jev](https://docs.typesafe.ai) (TypeSafe AI) and
+asks whether it is entirely an advertisement. Threads Jev judges to be ads get
+the label `Jev/Advertisements` and are moved out of the inbox; every thread
+that has been looked at gets `Jev/Checked` so the next run skips it.
+
+Note that the text of every processed email is sent to TypeSafe's API.
+
+Setup, once, in the Apps Script editor:
+
+1. Project Settings > Script properties > add `JEV_API_KEY` with your TypeSafe
+   key. The key lives only in script properties, never in this repo.
+2. Optional properties: `AD_THRESHOLD` (default `0.8`), `MAX_THREADS`
+   (default `500`), `AD_LABEL`, `CHECKED_LABEL`, `JEV_MODEL`.
+3. Pick `previewInbox` in the function dropdown and Run. Grant the Gmail and
+   external-request permissions when asked. The execution log shows one line
+   per thread with the ad probability; nothing is changed.
+4. When the preview looks right, run `classifyInbox`. It stops after
+   `MAX_THREADS` threads or five minutes, whichever comes first; run it again
+   to continue with the unchecked threads.
+
+`resetChecked` removes `Jev/Checked` everywhere so a run starts over.
