@@ -18,15 +18,19 @@ to Google with [clasp](https://github.com/google/clasp).
    ```
    npm install -g @google/clasp
    umask 077 && printf '%s' "$CLASPRC_JSON" > ~/.clasprc.json
-   clasp login --status
+   clasp show-authorized-user
    ```
 
 `~/.clasprc.json` must never be committed. `.clasp.json` (project id) is safe to commit.
 
 ## Daily use (from this folder)
 
+This folder is linked (via `.clasp.json`) to the standalone project
+**EddiGits Automations**. Run these from `apps-script/`:
+
 ```
-clasp create --type standalone --title "EddiGits Automations" --rootDir .   # first time only
+clasp status          # files that would be pushed
+clasp pull            # bring Google's current version into this folder
 clasp push            # upload src/ and appsscript.json
 clasp open-script     # open in the browser editor
 clasp deploy -d "v1"  # create a deployment
@@ -39,3 +43,10 @@ https://github.com/google/clasp/blob/master/docs/run.md.
 
 Scripts that touch Gmail, Drive, or Sheets need a one-time authorization
 click in the Apps Script editor the first time they run.
+
+## What is in here
+
+- `src/Code.js`: starter functions (`ping`, `listRecentThreads`, a web-app `doGet`).
+- `src/AdClassifier.js`: inbox advertisement classifier powered by Jev. It
+  needs a `JEV_API_KEY` script property; see the header comment for the
+  optional properties and the `previewInbox` / `classifyInbox` entry points.
